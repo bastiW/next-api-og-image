@@ -7,8 +7,8 @@ import isLambda from 'is-lambda'
 import os from 'os'
 import deepMerge from 'deepmerge'
 import twemoji from 'twemoji'
+import  chromium from "@sparticuz/chromium"
 import core from 'puppeteer-core'
-import chrome from 'chrome-aws-lambda'
 
 const STRATEGY_OPTIONS = ['body', 'query'] as const
 type StrategyOption = typeof STRATEGY_OPTIONS[number]
@@ -289,9 +289,9 @@ async function getChromiumOptions(
   } else {
     if (isLambda) {
       return {
-        args: chrome.args,
-        executablePath: await chrome.executablePath,
-        headless: chrome.headless,
+        args: chromium.args,
+        executablePath: await chromium.executablePath,
+        headless: chromium.headless,
       }
     } else {
       return {

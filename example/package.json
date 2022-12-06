@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@sparticuz/chromium": "^108.0.3",
     "next": "11.1.2",
     "next-api-og-image": "file:../",
     "react": "17.0.2",
